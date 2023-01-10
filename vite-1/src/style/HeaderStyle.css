@@ -1,0 +1,119 @@
+body{
+    margin: 0;
+    
+}
+
+
+.header{
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1208px;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+}
+.header-goods{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.header-btn-catalog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    background: #70C05B;
+    border-radius: 4px;
+    border: none;
+   
+}
+.catalog{
+    color: white;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.seacrh-input{
+    border: none;
+    color: white;
+   width: 317px;
+}
+.seacrh-input::placeholder{
+    color: #8F8F8F;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.form{
+    padding-left: 16px;
+}
+.search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: solid 1px #70C05B;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 8px;
+}
+.header-sections{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+   
+}
+.header-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+   
+}
+.section-name{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+}
+.header-user-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.header-user-menu-avatar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 15px;
+    gap: 10px;
+}
+.header-user-menu-avatar-chevron-down{
+    background-color: white;
+    border: none;
+}
+
