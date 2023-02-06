@@ -1,51 +1,42 @@
-
-:root{  
-   font-family: 'Rubik', sans-serif;
-   
-
+:root {
+  font-family: "Rubik", sans-serif;
 }
-.main-page{
-   background-color: #FBF8EC
-   ;
+body {
+  background-color: #fbf8ec;
+  margin: 0px;
 }
-.catalog_items{
-   display: flex;
-   flex-wrap: wrap;
-   gap: 40px;
-   
+.main-page {
+  padding-bottom: 80px;
 }
-.catalog-page{
+.catalog_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.catalog-page {
   max-width: 1208px;
   margin: 0 auto;
   padding-top: 27px;
-  
 }
-.item-name{
-   position: absolute;
-   display: inline;
-   padding-top: 80px;
-   margin-top: 83px;
-   padding-left: 10px;
-   font-style: normal;
-   font-weight: 700;
-   font-size: 18px;
-   line-height: 150%;
-   color: white;
- 
- 
+.item-name {
+  position: absolute;
+  display: inline;
+  padding-top: 80px;
+  margin-top: 83px;
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: white;
 }
-.parent-item{
-   position: relative;
-   
+.parent-item {
+  position: relative;
 }
-h1{
-   font-weight: 700;
-   font-size: 64px;
-   line-height: 150%;   
-   color: #414141;
-   margin: 0px;
+h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+  margin: 0px;
 }
-
-
-
-
