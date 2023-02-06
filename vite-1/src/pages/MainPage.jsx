@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/exports";
+import { Navigate } from "react-router-dom";
 import CatalogItems from "../components/Catalogitems";
 import Footer from "../components/Footer";
 import SearchBlock from "../components/SearchBlock";
