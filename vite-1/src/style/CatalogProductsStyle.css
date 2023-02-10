@@ -100,3 +100,7 @@
   left: -25px;
   top: 6px;
 }
+.products{
+  display: flex;
+  flex-direction: column;
+}

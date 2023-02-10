@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
             element: <CatalogPage />,
           },
           {
-            path: "</catalog/:id",
+            path: "/catalog/:id/:id",
             element: <ElementPage />,
           },
         ],

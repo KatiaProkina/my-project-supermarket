@@ -1,0 +1,88 @@
+.products-item{
+    padding-top: 40px;
+}
+.productsItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px;
+}
+.productCard{
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    max-width: 258px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.btn-like{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: #F3F2F1;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+}
+.product-card-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+}
+.product-card-name{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #414141;
+    align-self: stretch;
+}
+.btn-grade{
+    background-color: white;
+    border: none;
+}
+.btn-basket{
+    width: 100%;
+    padding: 8px;
+    color: #70C05B;
+    border: solid 1px #70C05B;
+    background-color: white;
+    border-radius: 4px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+.btn-show-more{
+    display: flex;
+    margin-top: 40px;
+    padding: 12px 20px 12px 20px;
+    background-color: #F3F2F1;
+    border: none;
+    border-radius: 4px;
+    color: #606060;
+}
+.block-btn-show-more{
+    display: flex;
+    justify-content: center;
+}
+.pagination{
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    justify-content: center;
+}
+.btn-pagination{
+    background-color:#FBF8EC;
+    border: none;
+    color: #606060;
+}

@@ -9,11 +9,9 @@ const CatalogItem = ({ name, image }) => {
   return (
     <div className="parent-item">
       <div className="item-name" onClick={handleGoToElement}>
-        {" "}
-        {name}{" "}
+        {name}
       </div>
       <div className="item" onClick={handleGoToElement}>
-        {" "}
         <img src={image} alt="Logo" />
       </div>
     </div>

@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import FilterButton from "../components/FilterButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ProductsItems from "../components/ProductsItems";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getProducts } from "../store/productSlice";
+import "../style/ProductsStyle.css";
+import { Slider, Switch } from "@mui/material";
 
 const CatalogPage = () => {
   const params = useParams();
@@ -11,13 +17,23 @@ const CatalogPage = () => {
     navigate(-1);
   };
 
+  const dispatch = useDispatch();
+  const productsCatalog = useSelector((state) => state.products.products);
+  const productsLoading = useSelector((state) => state.products.loading);
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   return (
     <div>
       <div>
         <Header />
       </div>
       <div className="catalog-products-page">
-        <div>Каталог > {params.id}</div>
+        <div>
+          Каталог {">"} {params.id}
+        </div>
         <div className="catalog-products">
           <h1>{params.id}</h1>
           <div className="filters-btn">
@@ -37,14 +53,16 @@ const CatalogPage = () => {
                   <input className="input-price" type="text" /> -{" "}
                   <input className="input-price" type="text" name="" id="" />
                 </div>
-                <div className="slider">ползунок</div>
+                <Slider />
               </div>
               <div className="filters-products">
                 <button className="filter-product">Молоко</button>
                 <button className="filter-product">Сливки</button>
                 <button className="filter-product">Яйцо</button>
               </div>
-              <div className="filter-checkbox">в наличии</div>
+              <div className="filter-checkbox">
+                <Switch />В наличии
+              </div>
               <button className="apply-btn">Применить</button>
             </div>
             <div className="products">
@@ -57,7 +75,8 @@ const CatalogPage = () => {
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -80,7 +99,8 @@ const CatalogPage = () => {
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -103,7 +123,8 @@ const CatalogPage = () => {
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -118,6 +139,30 @@ const CatalogPage = () => {
                     />
                   </svg>
                 </div>
+              </div>
+              <div className="products-item">
+                {productsLoading === "pending" ? (
+                  <div>Loading...</div>
+                ) : (
+                  <ProductsItems items={productsCatalog} />
+                )}
+              </div>
+              <div className="block-btn-show-more">
+                <button className="btn-show-more">Показать ещё</button>
+              </div>
+              <div className="pagination">
+                <button className="btn-pagination">{"<<"} </button>
+                <button className="btn-pagination">{"<"} </button>
+                <button className="btn-pagination">1</button>
+                <button className="btn-pagination">2</button>
+                <button className="btn-pagination">3</button>
+                <button className="btn-pagination">4</button>
+                <button className="btn-pagination">5</button>
+                <button className="btn-pagination">6</button>
+                <button className="btn-pagination">7</button>
+                <button className="btn-pagination">8</button>
+                <button className="btn-pagination">{">>"} </button>
+                <button className="btn-pagination">{">"} </button>
               </div>
             </div>
           </div>
