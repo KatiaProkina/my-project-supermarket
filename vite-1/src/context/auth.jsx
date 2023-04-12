@@ -3,10 +3,10 @@ import { useState } from "react";
 export const AuthContext = React.createContext(false);
 
 export const AuthContextProvider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [newUser, setNewUser] = useState(null);
   return (
-    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
-      {children}
+    <AuthContext.Provider value={{ newUser, setNewUser }}>
+      { children }
     </AuthContext.Provider>
   );
 };

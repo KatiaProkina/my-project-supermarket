@@ -32,7 +32,6 @@
 }
 .catalog {
   color: white;
-  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -53,7 +52,6 @@
 .seacrh-input::placeholder {
   border: none;
   color: #8f8f8f;
-  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -78,6 +76,7 @@
   gap: 24px;
 }
 .header-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +84,8 @@
   gap: 8px;
 }
 .section-name {
-  font-family: "Rubik";
+  border: none;
+  background-color: #ffffff;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -108,4 +108,14 @@
 .header-user-menu-avatar-chevron-down {
   background-color: white;
   border: none;
+}
+.basket-length {
+  font-size: 8px;
+  padding: 2px 4px;
+  position: absolute;
+  background-color: #ff6633;
+  border-radius: 4px;
+  color: white;
+  top: -6px;
+  right: 17px;
 }

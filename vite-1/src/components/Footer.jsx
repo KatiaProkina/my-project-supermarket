@@ -91,8 +91,7 @@ const Footer = () => {
               />
             </svg>
           </a>
-        </div>
-        <div className="number">
+          <div className="number">
           <svg
             width="22"
             height="22"
@@ -112,6 +111,8 @@ const Footer = () => {
             </a>
           </span>
         </div>
+        </div>
+       
       </div>
     </div>
   );

@@ -1,11 +1,15 @@
 import "../style/HeaderStyle.css";
-const SearchBlock = ({ value, setValue }) => {
+import { useContext } from "react";
+import { SearchContext } from "../context/SearchContext";
+const SearchBlock = () => {
+  const {setValue}  = useContext(SearchContext)
+  // console.log(obj)
+
   return (
     <input
       className="seacrh-input"
       placeholder="Найти товар"
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={(e) => setValue  (e.target.value)}
     />
   );
 };

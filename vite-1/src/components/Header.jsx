@@ -1,9 +1,16 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "../style/HeaderStyle.css";
 import SearchBlock from "./SearchBlock";
 
 const Header = () => {
+  const basket = useSelector(state=> state.basketProducts.basketProducts) 
   const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+  const handleBasket = () => {
+    navigate(`/basket`);
+  };
 
   return (
     <div className="header">
@@ -23,7 +30,8 @@ const Header = () => {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -47,7 +55,8 @@ const Header = () => {
               height="24"
               viewBox="0 0 23 20"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -55,7 +64,7 @@ const Header = () => {
                 fill="#414141"
               />
             </svg>
-            <div className="section-name">Избранное</div>
+            <button className="section-name">Избранное</button>
           </div>
           <div className="header-section">
             <svg
@@ -63,7 +72,8 @@ const Header = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -89,46 +99,39 @@ const Header = () => {
                 fill="#414141"
               />
             </svg>
-            <div className="section-name">Заказы</div>
+            <button className="section-name">Заказы</button>
           </div>
           <div className="header-section">
+            <div className="basket-length">{basket.length}</div>
             <svg
-              width="24"
+              width="25"
               height="24"
-              viewBox="0 0 25 28"
+              viewBox="0 0 25 24"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
-                d="M6 25C6 23.6193 7.11929 22.5 8.5 22.5C9.88071 22.5 11 23.6193 11 25C11 26.3807 9.88071 27.5 8.5 27.5C7.11929 27.5 6 26.3807 6 25ZM8.5 23.5C7.67157 23.5 7 24.1716 7 25C7 25.8284 7.67157 26.5 8.5 26.5C9.32843 26.5 10 25.8284 10 25C10 24.1716 9.32843 23.5 8.5 23.5Z"
+                d="M6 21C6 19.6193 7.11929 18.5 8.5 18.5C9.88071 18.5 11 19.6193 11 21C11 22.3807 9.88071 23.5 8.5 23.5C7.11929 23.5 6 22.3807 6 21ZM8.5 19.5C7.67157 19.5 7 20.1716 7 21C7 21.8284 7.67157 22.5 8.5 22.5C9.32843 22.5 10 21.8284 10 21C10 20.1716 9.32843 19.5 8.5 19.5Z"
                 fill="#414141"
               />
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
-                d="M18 25C18 23.6193 19.1193 22.5 20.5 22.5C21.8807 22.5 23 23.6193 23 25C23 26.3807 21.8807 27.5 20.5 27.5C19.1193 27.5 18 26.3807 18 25ZM20.5 23.5C19.6716 23.5 19 24.1716 19 25C19 25.8284 19.6716 26.5 20.5 26.5C21.3284 26.5 22 25.8284 22 25C22 24.1716 21.3284 23.5 20.5 23.5Z"
+                d="M18 21C18 19.6193 19.1193 18.5 20.5 18.5C21.8807 18.5 23 19.6193 23 21C23 22.3807 21.8807 23.5 20.5 23.5C19.1193 23.5 18 22.3807 18 21ZM20.5 19.5C19.6716 19.5 19 20.1716 19 21C19 21.8284 19.6716 22.5 20.5 22.5C21.3284 22.5 22 21.8284 22 21C22 20.1716 21.3284 19.5 20.5 19.5Z"
                 fill="#414141"
               />
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
-                d="M1.5 4.5C1.22386 4.5 1 4.72386 1 5C1 5.27614 1.22386 5.5 1.5 5.5H5.08051C5.83783 9.79147 6.60333 14.0643 7.24931 18.3709C7.43288 19.5947 8.48416 20.5 9.72165 20.5H19.8597C21.0514 20.5 22.0774 19.6588 22.3111 18.4903L23.7503 11.2942C23.936 10.366 23.226 9.5 22.2795 9.5H7.66046C7.3575 9.5 7.07797 9.58901 6.84436 9.74093L5.99239 4.91311C5.95023 4.67418 5.74262 4.5 5.5 4.5H1.5ZM7.166 11.0742C7.12065 10.7719 7.35478 10.5 7.66046 10.5H22.2795C22.595 10.5 22.8316 10.7887 22.7698 11.0981L21.3305 18.2942C21.1903 18.9953 20.5747 19.5 19.8597 19.5H9.72165C8.97916 19.5 8.34839 18.9568 8.23825 18.2225L7.166 11.0742Z"
+                d="M1.5 0.5C1.22386 0.5 1 0.723858 1 1C1 1.27614 1.22386 1.5 1.5 1.5H5.08051C5.83783 5.79147 6.60333 10.0643 7.24931 14.3709C7.43288 15.5947 8.48416 16.5 9.72165 16.5H19.8597C21.0514 16.5 22.0774 15.6588 22.3111 14.4903L23.7503 7.29417C23.936 6.36599 23.226 5.5 22.2795 5.5H7.66046C7.3575 5.5 7.07797 5.58901 6.84436 5.74093L5.99239 0.913107C5.95023 0.674179 5.74262 0.5 5.5 0.5H1.5ZM7.166 7.07417C7.12065 6.77187 7.35478 6.5 7.66046 6.5H22.2795C22.595 6.5 22.8316 6.78866 22.7698 7.09806L21.3305 14.2942C21.1903 14.9953 20.5747 15.5 19.8597 15.5H9.72165C8.97916 15.5 8.34839 14.9568 8.23825 14.2225L7.166 7.07417Z"
                 fill="#414141"
-              />
-              <rect
-                x="12.3599"
-                width="11.28"
-                height="11"
-                rx="4"
-                fill="#FF6633"
-              />
-              <path
-                d="M18.8799 9C18.8132 9 18.7565 8.98 18.7099 8.94C18.6699 8.89333 18.6499 8.83667 18.6499 8.77V3.17L16.9899 4.45C16.9432 4.49 16.8932 4.51 16.8399 4.51C16.7799 4.51 16.7232 4.47667 16.6699 4.41L16.4099 4.08C16.3765 4.03333 16.3599 3.98667 16.3599 3.94C16.3599 3.86 16.3932 3.79667 16.4599 3.75L18.6399 2.07C18.7132 2.02333 18.7999 2 18.8999 2H19.4099C19.4765 2 19.5299 2.02333 19.5699 2.07C19.6165 2.11 19.6399 2.16333 19.6399 2.23V8.77C19.6399 8.83667 19.6165 8.89333 19.5699 8.94C19.5299 8.98 19.4765 9 19.4099 9H18.8799Z"
-                fill="white"
               />
             </svg>
-            <div className="section-name">Корзина</div>
+            <button className="section-name" onClick={handleBasket}>
+              Корзина
+            </button>
           </div>
         </div>
         <div className="header-user-menu">
@@ -142,7 +145,8 @@ const Header = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"

@@ -94,12 +94,29 @@
   background: #f3f2f1;
   border-radius: 4px;
   border: none;
+  transition: 9999999s;
 }
+.product-btn_active{
+  background: #70C05B;
+  color: white;
+  transition: 0s;
+}
+
 .delete {
   position: relative;
   left: -25px;
   top: 6px;
+  transition: 9999999s;
 }
+.delete:active path{
+  fill: white;
+  transition: 0s;
+}
+.delete_active path{
+  fill: white;
+  transition: 0s;
+}
+
 .products{
   display: flex;
   flex-direction: column;

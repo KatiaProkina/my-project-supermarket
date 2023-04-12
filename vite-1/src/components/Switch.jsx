@@ -18,14 +18,49 @@ export default function ControlledSwitches() {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+  const useStyles = makeStyles((theme) => ({  
+    switch_track: {
+        backgroundColor: "#f50057",
+    },
+    switch_base: {
+        color: "#f50057",
+        "&.Mui-disabled": {
+            color: "#e886a9"
+        },
+        "&.Mui-checked": {
+            color: "#95cc97"
+        },
+        "&.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: "#4CAF50",
+        }
+    },
+    switch_primary: {
+        "&.Mui-checked": {
+            color: "#4CAF50",
+        },
+        "&.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: "#4CAF50",
+        },
+    },
+}));
+
+
+
 
   return (
     <ThemeProvider theme={outerTheme}>
     <Switch
-      checked={checked}
-      onChange={handleChange}
-      inputProps={{ 'aria-label': 'controlled' }}
-    />
+  classes={{
+    track: classes.switch_track,
+    switchBase: classes.switch_base,
+    colorPrimary: classes.switch_primary,
+  }}
+  color={!disabled ? "primary" : "default"}
+  checked={value}
+  onChange={handleChange}
+  name="<your_name>"
+  disabled={disabled}
+/>
     </ThemeProvider>
   );
 }

@@ -28,10 +28,14 @@ const catalogSlice = createSlice({
     catalogLoading: (state) => {
       state.loading = "pending";
     },
+    // catalogLoadingTrue:(state,action)=>{
+    //   state.loading = action.payload
+    // }
+
   },
 });
 
-const { catalogReceived, catalogLoading } = catalogSlice.actions;
+const { catalogReceived, catalogLoading, catalogLoadingTrue} = catalogSlice.actions;
 
 export const getCatalogItems = () => (dispatch) => {
   dispatch(catalogLoading());
@@ -120,5 +124,9 @@ export const getCatalogItems = () => (dispatch) => {
     );
   }, 2000);
 };
+ 
+// export const changeLoading=()=>(dispatch)=>{
+//   dispatch(catalogLoadingTrue('Katya'))
+// }
 
 export default catalogSlice.reducer;
