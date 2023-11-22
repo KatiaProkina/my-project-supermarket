@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/exports";
-import CatalogItems from "../components/CatalogItems";
+import CatalogItems from "../components/Catalogitems";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { getCatalogItems } from "../store/catalogSlice";
@@ -9,7 +9,8 @@ import "../style/CatalogStyle.css";
 import { SearchContext } from "../context/SearchContext";
 
 const MainPage = () => {
-  const { value } = useContext(SearchContext);
+ 
+  const {value} = useContext(SearchContext)
   const dispatch = useDispatch();
   const catalogItems = useSelector((state) => state.catalog.catalog);
   const catalogLoading = useSelector((state) => state.catalog.loading);
@@ -24,7 +25,7 @@ const MainPage = () => {
 
   return (
     <div>
-      <Header />
+      <Header/>
       <div className="main-page">
         <div className="catalog-page">
           <div></div>
